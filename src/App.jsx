@@ -28,7 +28,9 @@ const App = () => {
   const LINKS = {
     booking: "https://www.vagaro.com/cl/5pbq7wZzdhntY0fpH~P3eEZMbvZVP8Oy5f~MRiDXd9o=",
     webApp: "https://www.lifestyleexamedge.com",
-    store: "#store"
+    store: "#store",
+    // UPDATED: High-speed Vercel Blob URL
+    videoDemo: "https://9ol2kar7xqxz22xi.public.blob.vercel-storage.com/app-demo.mp4"
   };
 
   // --- STORE PRODUCTS DATA ---
@@ -39,16 +41,15 @@ const App = () => {
       price: '$69.99',
       badge: 'D.L. Roope Compliant',
       features: ['EPA Disinfecting Wipes (No Spray)', 'Simulated Color & Relaxer', 'Blood Spill & First Aid', 'Pre-Labeled Compliance Bags'],
-      link: '#', // Placeholder for Shopify Link
+      link: '#',
     },
     {
       id: 'barber-kit',
       name: 'WA Barber 1 (No Chem) Kit',
       price: '$59.99',
       badge: '100% Verified 2026',
-      // UPDATED: Changed 'Bottles' to 'Bags' here
       features: ['Shave & Fade Supplies', 'EPA Disinfecting Wipes', 'Pre-Labeled Steam Towel Bags', 'Zero Chemical Supplies (Compliance)'],
-      link: '#', // Placeholder for Shopify Link
+      link: '#',
     }
   ];
 
@@ -106,8 +107,6 @@ const App = () => {
 
           {/* TEXT CONTENT */}
           <div className="space-y-8 text-center lg:text-left">
-
-            {/* The "Motto" Badge */}
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md animate-float">
               <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-gold-glow">Passion</span>
               <span className="w-1 h-1 rounded-full bg-white/20" />
@@ -116,7 +115,6 @@ const App = () => {
               <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-gold-glow">Execution</span>
             </div>
 
-            {/* The Main Headline */}
             <h1 className="text-5xl lg:text-7xl font-serif font-bold leading-tight">
               <span className="block text-2xl lg:text-4xl italic font-normal text-white/50 mb-2">
                 Envision your destiny.
@@ -126,13 +124,11 @@ const App = () => {
               </span>
             </h1>
 
-            {/* Modernized Description */}
             <p className="text-lg text-white/60 max-w-xl mx-auto lg:mx-0 leading-relaxed">
               The complete ecosystem for the modern professional.
               We provide <span className="text-white">WA State Exam Prep</span>, fully compliant <span className="text-white">Practical Kits</span>, and private mentorship.
             </p>
 
-            {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a href={LINKS.webApp} target="_blank" className="px-8 py-4 rounded-full bg-gradient-to-r from-gold-glow to-orange-400 text-black font-bold hover:shadow-[0_0_30px_rgba(250,204,21,0.4)] transition-all">
                 Start Exam Prep
@@ -142,7 +138,6 @@ const App = () => {
               </a>
             </div>
 
-            {/* Service Tags */}
             <div className="pt-4 flex flex-wrap gap-x-6 gap-y-3 justify-center lg:justify-start text-xs font-medium text-white/40 uppercase tracking-wider">
               <span className="flex items-center gap-2"><div className="w-1 h-1 bg-gold-glow rounded-full"></div> Practical Kits</span>
               <span className="flex items-center gap-2"><div className="w-1 h-1 bg-gold-glow rounded-full"></div> Exam Walkthroughs</span>
@@ -150,20 +145,17 @@ const App = () => {
             </div>
           </div>
 
-          {/* VISUAL HERO (The Midnight Cutout) */}
+          {/* VISUAL HERO */}
           <div className="relative h-[700px] w-full hidden lg:flex items-end justify-center">
-            {/* Background Glass Shapes */}
             <div className="absolute top-20 right-10 w-[400px] h-[500px] bg-white/5 rounded-[3rem] rotate-6 border border-white/10 backdrop-blur-sm z-0" />
             <div className="absolute top-10 right-20 w-[400px] h-[500px] bg-white/5 rounded-[3rem] -rotate-3 border border-white/10 backdrop-blur-sm z-0" />
 
-            {/* The Founder Cutout */}
             <img
               src="/images/hero-cutout.png"
               alt="Master Barber"
               className="relative z-10 w-auto h-[90%] object-contain hero-glow hover:scale-105 transition-transform duration-700 ease-out origin-bottom"
             />
 
-            {/* Status Badge */}
             <div className="absolute bottom-24 -left-4 p-4 glass-panel rounded-2xl flex items-center gap-4 max-w-xs z-20 animate-float bg-midnight/80">
               <div className="bg-gold-glow/20 p-3 rounded-xl text-gold-glow">
                 <Scissors size={24} />
@@ -177,7 +169,7 @@ const App = () => {
         </div>
       </section>
 
-      {/* --- SERVICES (Cards) --- */}
+      {/* --- SERVICES --- */}
       <section id="services" className="relative z-10 py-32 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16 text-center">
@@ -185,32 +177,24 @@ const App = () => {
             <p className="text-white/50">Professional grooming services and state-of-the-art educational tools.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-
-            {/* Barber Card */}
             <div className="group relative h-[500px] rounded-[2.5rem] overflow-hidden border border-white/10 transition-all duration-500 hover:border-barber-glow/50">
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-midnight/90 z-10" />
               <img src="/images/barber-service.jpg" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60" alt="Barber Station" />
-
               <div className="absolute inset-0 z-20 flex flex-col justify-end p-10">
                 <div className="w-14 h-14 rounded-2xl bg-barber-glow/20 backdrop-blur-md flex items-center justify-center mb-6 text-barber-glow">
                   <Scissors size={28} />
                 </div>
                 <h3 className="text-4xl font-serif mb-2 group-hover:text-barber-glow transition-colors">Barber Studio</h3>
                 <p className="text-white/70 mb-4 max-w-sm">Precision cuts at Capital Barbershop. Bookings handled via Vagaro.</p>
-
-                {/* BUTTON */}
                 <a href={LINKS.booking} target="_blank" className="w-full py-4 rounded-xl bg-white text-black font-bold text-center hover:bg-barber-glow hover:text-white transition-colors flex justify-center items-center gap-2">
                   Book with Michael <ExternalLink size={16}/>
                 </a>
-
-                {/* HELPER TEXT */}
                 <p className="mt-3 text-[10px] text-white/50 uppercase tracking-widest text-center">
                   Select <span className="text-gold-glow font-bold">Michael</span> if prompted
                 </p>
               </div>
             </div>
 
-            {/* App Card */}
             <div className="group relative h-[500px] rounded-[2.5rem] overflow-hidden border border-white/10 transition-all duration-500 hover:border-cosmo-glow/50">
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-midnight/90 z-10" />
               <img src="/images/app-card.png" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60" alt="State Board App" />
@@ -225,18 +209,14 @@ const App = () => {
                 </a>
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* --- APP SHOWCASE (Video & Features) --- */}
+      {/* --- APP SHOWCASE --- */}
       <section id="app" className="relative py-32 px-4 overflow-hidden">
         <div className="max-w-6xl mx-auto glass-panel rounded-[3rem] p-8 md:p-16 relative overflow-hidden">
-
           <div className="grid md:grid-cols-2 gap-16 items-start relative z-10">
-
-            {/* Left: Feature Breakdown */}
             <div>
               <div className="inline-block px-4 py-1 rounded-full border border-gold-glow/30 bg-gold-glow/10 text-gold-glow text-xs font-bold uppercase tracking-widest mb-6">
                 Open Beta Live
@@ -247,7 +227,6 @@ const App = () => {
               </p>
 
               <div className="space-y-6">
-                {/* 1. WRITTEN EXAM SUITE */}
                 <div className="bg-white/5 border border-white/5 rounded-2xl p-6 hover:bg-white/10 transition-colors">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="p-2 bg-cosmo-glow/20 rounded-lg text-cosmo-glow">
@@ -270,7 +249,6 @@ const App = () => {
                   </ul>
                 </div>
 
-                {/* 2. PRACTICAL EXAM SUITE */}
                 <div className="bg-white/5 border border-white/5 rounded-2xl p-6 hover:bg-white/10 transition-colors">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="p-2 bg-barber-glow/20 rounded-lg text-barber-glow">
@@ -302,16 +280,16 @@ const App = () => {
               </div>
             </div>
 
-            {/* Right: Video Phone */}
+            {/* Right: Video Phone with UPDATED URL */}
             <div className="relative group cursor-pointer flex justify-center md:sticky md:top-24">
               <div className="absolute inset-0 bg-gradient-to-tr from-gold-glow/20 to-cosmo-glow/20 blur-[60px] animate-pulse" />
               <div className="relative w-[300px] h-[600px] bg-black border-[8px] border-gray-800 rounded-[3rem] shadow-2xl overflow-hidden z-10">
                 <div className="absolute top-0 w-full h-8 bg-black z-20 flex justify-center">
                   <div className="w-32 h-6 bg-black rounded-b-xl" />
                 </div>
-                {/* VIDEO PLAYER */}
+                {/* VIDEO PLAYER - NOW USING VERCEL BLOB */}
                 <video
-                  src="/videos/app-demo.mp4"
+                  src={LINKS.videoDemo}
                   className="w-full h-full object-cover"
                   autoPlay loop muted playsInline
                   poster="/images/app-card.png"
@@ -326,11 +304,9 @@ const App = () => {
         </div>
       </section>
 
-      {/* --- ABOUT FOUNDER (The "Toned Down & Powerful" Rewrite) --- */}
+      {/* --- ABOUT FOUNDER --- */}
       <section id="about" className="relative py-20 px-4">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-16">
-
-          {/* 1. THE IMAGE */}
           <div className="w-full md:w-1/2 h-[600px] relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl group">
             <div className="absolute inset-0 bg-gradient-to-t from-midnight/80 via-transparent to-transparent z-10" />
             <img
@@ -344,18 +320,15 @@ const App = () => {
             </div>
           </div>
 
-          {/* 2. THE NARRATIVE (Grounded, Experienced, Powerful) */}
           <div className="w-full md:w-1/2 space-y-8">
             <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center border border-white/10">
               <BarberPole className="text-gold-glow w-8 h-8" />
             </div>
-
             <div>
               <h2 className="text-5xl font-serif mb-6 leading-tight">
                 Built from experience. <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">Designed for your future.</span>
               </h2>
-
               <div className="space-y-6 text-lg text-white/70 leading-relaxed font-light">
                 <p>
                   I've spent years in this industry, facing the same doubts and obstacles that everyone else does. I learned quickly that success isn't given—it's engineered through discipline and real work.
@@ -368,7 +341,6 @@ const App = () => {
                 </p>
               </div>
             </div>
-
             <div className="pt-4 border-t border-white/10 flex items-center gap-6">
                 <div className="flex flex-col">
                   <span className="text-2xl font-serif text-white">100%</span>
@@ -384,14 +356,10 @@ const App = () => {
         </div>
       </section>
 
-      {/* --- THE STORE / MERCH DROP --- */}
+      {/* --- STORE --- */}
       <section id="store" className="relative py-32 px-4 border-t border-white/5">
-
-        {/* Background Glow specifically for the Store */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-store-glow/5 rounded-full blur-[120px] pointer-events-none" />
-
         <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
           <div className="text-center mb-16">
             <div className="inline-block px-4 py-1 rounded-full border border-store-glow/30 bg-store-glow/10 text-store-glow text-xs font-bold uppercase tracking-widest mb-6">
               Verified 2026 Compliance
@@ -400,7 +368,6 @@ const App = () => {
             <p className="text-white/60">D.L. Roope & NIC Compliant. No banned items. No spray disinfectants.</p>
           </div>
 
-          {/* KITS GRID */}
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {PRODUCTS.map((product) => (
               <div key={product.id} className="glass-panel p-8 rounded-3xl relative group hover:border-store-glow/30 transition-colors">
@@ -409,7 +376,6 @@ const App = () => {
                 </div>
                 <h3 className="text-2xl font-bold mb-2">{product.name}</h3>
                 <p className="text-3xl font-serif text-gold-glow mb-6">{product.price}</p>
-
                 <ul className="space-y-3 mb-8">
                   {product.features.map((feat, i) => (
                     <li key={i} className="flex items-center gap-3 text-sm text-white/70">
@@ -418,7 +384,6 @@ const App = () => {
                     </li>
                   ))}
                 </ul>
-
                 <button className="w-full py-4 rounded-xl bg-white text-black font-bold hover:bg-store-glow hover:text-white transition-colors flex items-center justify-center gap-2">
                   <ShoppingBag size={18} /> Add to Cart
                 </button>
@@ -426,10 +391,9 @@ const App = () => {
             ))}
           </div>
 
-          {/* BLIND FAITH MERCH */}
           <div className="glass-panel rounded-[2.5rem] p-8 md:p-12 flex flex-col md:flex-row items-center gap-12">
             <div className="w-full md:w-1/3">
-               <img src="/images/BlindFaith1.png" className="rounded-2xl shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500" alt="Merch" />
+                <img src="/images/BlindFaith1.png" className="rounded-2xl shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500" alt="Merch" />
             </div>
             <div className="w-full md:w-2/3 text-center md:text-left">
               <h3 className="text-4xl font-serif mb-4">Blind Faith Collection</h3>
