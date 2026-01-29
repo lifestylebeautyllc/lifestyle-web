@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+/* V4 THEME CONFIGURATION
+  Defines the core colors and fonts for the "Vibrant Glass" aesthetic.
+*/
+@theme {
+  /* The Void Background */
+  --color-midnight: #020617; /* Deepest Slate */
+
+  /* The "Vibrant" Accents */
+  --color-gold-glow: #FACC15;  /* Electric Gold */
+  --color-barber-glow: #6366f1; /* Electric Indigo */
+  --color-cosmo-glow: #f43f5e;  /* Electric Rose/Pink */
+
+  /* Fonts */
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  /* Animation Utilities */
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+/* CUSTOM UTILITIES
+  Reusable classes for Glassmorphism and Effects
+*/
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl;
+  }
+
+  .glass-button {
+    @apply bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 transition-all duration-300;
+  }
+
+  /* THE HERO GLOW: Makes the cutout image blend into the specific background */
+  .hero-glow {
+    /* 1. The Aura: A subtle Indigo light behind you to separate you from the darkness */
+    filter: drop-shadow(0 0 30px rgba(99, 102, 241, 0.5));
+
+    /* 2. The Fade: Softens the bottom edge so you blend into the void */
+    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  }
+}
+
+/* GLOBAL STYLES */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Keyframes for the "floating" badge animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
